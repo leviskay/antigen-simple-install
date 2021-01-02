@@ -51,3 +51,9 @@ mkdir -p $pathToAntigen
 curl -L git.io/antigen > $pathToAntigen/antigen.zsh
 
 installZshForUser root /root
+
+usersDir=$(ls /home)
+for user in $usersDir
+do
+  writeZshrcFileToUser $user /home/$user
+done
