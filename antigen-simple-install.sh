@@ -39,21 +39,27 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-if [ -f $fullPath ]; then 
-  echo "Antigen has already been installed"
-  echo "Exit"
-  exit
+if [ -f $fullPath ]; 
+then 
+  echo "Antigen has already been download."
+else
+  apt install -y curl 
+  mkdir -p $pathToAntigen 
+  curl -L git.io/antigen > $pathToAntigen/antigen.zsh
 fi
 
-apt install -y curl zsh
-mkdir -p $pathToAntigen 
-
-curl -L git.io/antigen > $pathToAntigen/antigen.zsh
+I=`dpkg -s zsh | grep "Status" ` 
+if [ -n "$I" ] 
+then
+  echo "Zsh has already been installed."
+else
+  apt install -y zsh
+fi
 
 installZshForUser root /root
 
 usersDir=$(ls /home)
 for user in $usersDir
 do
-  writeZshrcFileToUser $user /home/$user
+  installZshForUser $user /home/$user
 done
