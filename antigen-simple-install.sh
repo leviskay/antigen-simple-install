@@ -19,8 +19,7 @@ apt install -y curl zsh
 mkdir -p $pathToAntigen 
 
 curl -L git.io/antigen > $pathToAntigen/antigen.zsh
-zshrc="
-source /path-to-antigen/antigen.zsh
+zshrc="source $fullPath 
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle heroku
@@ -32,5 +31,5 @@ antigen theme terminalparty
 antigen apply"
 
 echo "Write .zshrc for root..."
-echo $zshrc > /root/.zshrc
+echo "$zshrc" > /root/.zshrc
 echo "Success"
