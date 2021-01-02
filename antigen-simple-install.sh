@@ -33,3 +33,6 @@ antigen apply"
 echo "Write .zshrc for root..."
 echo "$zshrc" > /root/.zshrc
 echo "Success"
+echo "Install zsh as default shell for root..."
+chsh -s /bin/zsh root
+echo "Success"
