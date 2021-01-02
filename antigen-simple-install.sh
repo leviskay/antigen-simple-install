@@ -8,7 +8,8 @@ function installZshForUser {
   user=$1
   userDir=$2
   while true; do
-    read -p "Install zsh as default shell and write .zshrc for $user?[y/N] " yn
+  # </dev/tty used to get user input when using a pipe
+    read -p "Install zsh as default shell and write .zshrc for $user?[y/N] " yn </dev/tty 
     case $yn in
       [Yy]* ) break;;
       [Nn]* ) return;;
