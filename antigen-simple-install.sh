@@ -44,7 +44,7 @@ if [ -f $fullPath ];
 then 
   echo "Antigen has already been download."
 else
-  apt install -y curl 
+  apt install -y curl git
   mkdir -p $pathToAntigen 
   curl -L git.io/antigen > $pathToAntigen/antigen.zsh
 fi
