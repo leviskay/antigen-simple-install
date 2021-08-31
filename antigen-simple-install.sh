@@ -24,6 +24,7 @@ function installZshForUser {
   antigen bundle lein
   antigen bundle command-not-found
   antigen bundle zsh-users/zsh-syntax-highlighting
+  antigen bundle lukechilds/zsh-nvm
   antigen theme terminalparty
   antigen apply"
 
