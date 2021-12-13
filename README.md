@@ -10,6 +10,10 @@ Run in terminal
 ```sh
 curl https://raw.githubusercontent.com/leviskay/antigen-simple-install/main/antigen-simple-install.sh | bash
 ```
+or 
+```sh
+wget -q -O - https://raw.githubusercontent.com/leviskay/antigen-simple-install/main/antigen-simple-install.sh | sudo bash
+```
 
 ## .zshrc template
 ```
